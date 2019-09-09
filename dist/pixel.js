@@ -1,8 +1,6 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
-// Original `Pixel Font`: https://github.com/PaulBGD/PixelFont
+// Based on `Pixel Font`: https://github.com/PaulBGD/PixelFont
 
 const font = {
     '.': 1, // 00001

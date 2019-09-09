@@ -1,4 +1,4 @@
-// Original `Pixel Font`: https://github.com/PaulBGD/PixelFont
+// Based on `Pixel Font`: https://github.com/PaulBGD/PixelFont
 
 export const font = {
     '.': 1, // 00001

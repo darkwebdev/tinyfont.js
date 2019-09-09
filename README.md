@@ -1,6 +1,8 @@
 # tinyfont.js
 Tiniest possible pixel font for your JS games < 1Kb (suitable for js13k)
 
+Inspired by https://github.com/PaulBGD/PixelFont
+
 ## install
 ```
 yarn add tinyfont

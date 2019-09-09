@@ -7,7 +7,8 @@ export default [
         ],
         output: {
             dir: 'dist',
-            format: 'cjs'
+            format: 'cjs',
+            esModule: false
         }
     }
 ];

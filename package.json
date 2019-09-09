@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "build": "rm -rf dist && yarn rollup -c",
-    "min": "yarn terser dist/index.js dist/pixel.js -o dist/tinyfont.min.js --config-file .terser.json --toplevel "
+    "min": "yarn terser dist/index.js dist/pixel.js -o dist/tinyfont.min.js --config-file .terser.json"
   },
   "devDependencies": {
     "rollup": "^1.21.2",

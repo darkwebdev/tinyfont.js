@@ -1,7 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
 // Based on `game over Font`: https://www.1001fonts.com/game-over-font.html
 
 const font = {

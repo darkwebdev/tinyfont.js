@@ -1,5 +1,7 @@
 {
-  "mangle": true,
+  "mangle": {
+    "toplevel": true
+  },
   "compress": {
     "drop_console": true
   }
