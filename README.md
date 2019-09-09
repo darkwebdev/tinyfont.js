@@ -39,5 +39,6 @@ render('Complex stuff', 100, 100, 50, 'red');
 - color: font color, string (default: '#000')
 
 ## examples
-[Simple example](examples/simple.js)
-[Multi fonts example](examples/index.js)
+[Simple example](https://darkwebdev.github.io/tinyfont.js/examples/simple) ([source](examples/simple.js))
+
+[Multi fonts example](https://darkwebdev.github.io/tinyfont.js/examples) ([source](examples/index.js))
