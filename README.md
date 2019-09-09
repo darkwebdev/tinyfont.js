@@ -1,23 +1,21 @@
 # tinyfont.js
-Tiniest possible pixel font for your js games (suitable for js13k)
+Tiniest possible pixel font for your JS games < 1Kb (suitable for js13k)
 
 ## install
 ```
-yarn add tinyfont-js
+yarn add tinyfont
 ```
 
 ## import...
 ### if you use ES-modules in the browser:
 ```ecmascript 6
-import { initFont } from 'node_modules/tinyfont/index.js';
+import { initFont } from 'node_modules/tinyfont/src/index.js';
 // Load the desired font
-import * as font from 'node_modules/tinyfont/fonts/pixel.js';
+import { font } from 'node_modules/tinyfont/src/fonts/pixel.js';
 ```
-### if you use a bundler like webpack:
+### if you use a bundler like webpack (common JS modules):
 ```ecmascript 6
-import { initFont } from 'tinyfont';
-// Load the desired font
-import * as font from 'tinyfont/fonts/pixel';
+import { initFont, font } from 'tinyfont/dist/tinyfont.min';
 ```
 
 ## render:
@@ -26,15 +24,20 @@ import * as font from 'tinyfont/fonts/pixel';
 const ctx = document.querySelector('canvas').getContext('2d');
 
 // Init the tinyfont and get the `render` function
-const render = initFont({ font, ctx });
+const render = initFont(font, ctx);
 
 // Show the string on the screen
 render('Simple example');
-render('Complex stuff', { x: 100, y: 100, size: 50, color: 'red' });
+render('Complex stuff', 100, 100, 50, 'red');
 ```
 
-## render options
+### render function signature:
+`render(string, x, y, size, color)`
 - x: horizontal coordinate, px (default: 0)
 - y: vertical coordinate, px (default: 0)
 - size: font height, px (default: 24)
 - color: font color, string (default: '#000')
+
+## examples
+[Simple example](examples/simple.js)
+[Multi fonts example](examples/index.js)

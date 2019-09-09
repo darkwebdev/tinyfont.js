@@ -1,0 +1,6 @@
+{
+  "mangle": true,
+  "compress": {
+    "drop_console": true
+  }
+}

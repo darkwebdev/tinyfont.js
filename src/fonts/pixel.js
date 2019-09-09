@@ -1,6 +1,6 @@
 // Original `Pixel Font`: https://github.com/PaulBGD/PixelFont
 
-export const chars = {
+export const font = {
     '.': 1, // 00001
     ',': 3, // 00011
     ':': 17, // 10001

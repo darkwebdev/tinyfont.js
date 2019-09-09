@@ -1,7 +1,7 @@
 // Based on `game over Font`: https://www.1001fonts.com/game-over-font.html
 
-export const height = 4;
-export const chars = {
+export const font = {
+    height: 4,
     A: 855, // 0011 0101 0111
     B: 3927, // 1111 0101 0111
     C: 117, // 0111 0101
