@@ -13,9 +13,9 @@ import { initFont } from 'node_modules/tinyfont/src/index.js';
 // Load the desired font
 import { font } from 'node_modules/tinyfont/src/fonts/pixel.js';
 ```
-### if you use a bundler like webpack (common JS modules):
+### if you use Common JS or ES modules with a bundler like webpack or rollup:
 ```ecmascript 6
-import { initFont, font } from 'tinyfont/dist/tinyfont.min';
+import { initFont, font } from 'tinyfont';
 ```
 
 ## render:
