@@ -1,4 +1,4 @@
-import { initFont } from '../tinyfont.js'
+import { initFont } from '../index.js'
 import * as defaultFont from '../fonts/pixel.js';
 import * as tinyFont from '../fonts/tiny.js';
 

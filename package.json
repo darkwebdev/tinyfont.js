@@ -1,0 +1,9 @@
+{
+  "name": "tinyfont",
+  "version": "1.0.0",
+  "description": "Tiniest possible pixel font for your js games (suitable for js13k)",
+  "main": "index.js",
+  "repository": "https://github.com/darkwebdev/tinyfont.js.git",
+  "author": "Timur Manyanov <gtibalt@gmail.com>",
+  "license": "MIT"
+}
