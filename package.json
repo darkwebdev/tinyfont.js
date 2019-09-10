@@ -7,8 +7,9 @@
   "author": "Timur Manyanov <gtibalt@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "rm -rf dist && yarn rollup -c",
-    "min": "yarn terser dist/index.js dist/pixel.js -o dist/tinyfont.min.js --config-file .terser.json"
+    "bundle": "rm -rf dist && yarn rollup -c",
+    "min": "yarn terser dist/index.js dist/pixel.js -o dist/tinyfont.min.js --config-file .terser.json",
+    "build": "yarn bundle && yarn min"
   },
   "devDependencies": {
     "rollup": "^1.21.2",

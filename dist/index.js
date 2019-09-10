@@ -25,7 +25,6 @@ const initFont = ({ height=DEFAULT_CHAR_HEIGHT, ...chars }={}, ctx) => {
 
             const binary = (binaryChar || 0).toString(2);
 
-
             const width = Math.ceil(binary.length / height);
             const marginX = charX + pixelSize;
             const formattedBinary = binary.padStart(width * height, 0);
@@ -34,21 +33,17 @@ const initFont = ({ height=DEFAULT_CHAR_HEIGHT, ...chars }={}, ctx) => {
             console.debug('Rendering char', char, binaryCols);
 
             binaryCols.map((column, colPos) =>
-                column
-                    .split('')
-                    .forEach((pixel, pixPos) => {
-                        ctx.fillStyle = !+pixel ? 'transparent' : color; // pixel == 0 ?
-                        ctx.fillRect(marginX + colPos * pixelSize, y + pixPos * pixelSize, pixelSize, pixelSize);
-                    })
+                [...column].forEach((pixel, pixPos) => {
+                    ctx.fillStyle = !+pixel ? 'transparent' : color; // pixel == 0 ?
+                    ctx.fillRect(marginX + colPos * pixelSize, y + pixPos * pixelSize, pixelSize, pixelSize);
+                })
             );
 
             return charX + (width+1)*pixelSize
         };
 
         console.debug('Rendering string', string);
-        string
-            .split('')
-            .reduce(renderChar, 0);
+        [...string].reduce(renderChar, 0);
     };
 };
 
