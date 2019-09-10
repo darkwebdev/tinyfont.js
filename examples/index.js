@@ -4,7 +4,8 @@ import { font as tinyFont } from '../src/fonts/tiny.js';
 
 const { innerWidth, devicePixelRatio: dpr = 1 } = window;
 const canvas = document.querySelector('canvas');
-const input = document.querySelector('input');
+const textInput = document.querySelector('#text');
+const sizeInput = document.querySelector('#size');
 
 canvas.width = innerWidth;
 canvas.height = 300;
@@ -15,13 +16,14 @@ const renderWithDefaultFont = initFont(defaultFont, ctx);
 const renderWithTinyFont = initFont(tinyFont, ctx);
 
 const update = () => {
-    input.style.width = `${input.value.length+1}ch`;
+    textInput.style.width = `${textInput.value.length+1}ch`;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    renderWithDefaultFont(input.value);
-    renderWithTinyFont(input.value, 0, 50);
+    renderWithDefaultFont(textInput.value, 0, 0, sizeInput.value);
+    renderWithTinyFont(textInput.value, 0, 50, sizeInput.value);
 };
 
-input.addEventListener('input', update);
+textInput.addEventListener('input', update);
+sizeInput.addEventListener('input', update);
 
 update();

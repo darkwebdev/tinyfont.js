@@ -2,14 +2,15 @@
   "name": "tinyfont",
   "version": "1.1.0",
   "description": "Tiniest possible pixel font for your js games (suitable for js13k)",
-  "main": "dist/tinyfont.min.js",
+  "main": "dist/tinyfont-font-pixel.min.js",
   "repository": "https://github.com/darkwebdev/tinyfont.js.git",
   "author": "Timur Manyanov <gtibalt@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "bundle": "rm -rf dist && yarn rollup -c",
-    "min": "yarn terser dist/index.js dist/pixel.js -o dist/tinyfont.min.js --config-file .terser.json",
-    "build": "yarn bundle && yarn min"
+    "trans": "rm -rf dist && yarn rollup -c",
+    "build:pixel": "yarn terser dist/index.js dist/pixel.js -o dist/tinyfont-font-pixel.min.js --config-file .terser.json",
+    "build:tiny": "yarn terser dist/index.js dist/tiny.js -o dist/tinyfont-font-tiny.min.js --config-file .terser.json",
+    "build": "yarn trans && yarn build:pixel && yarn build:tiny"
   },
   "devDependencies": {
     "rollup": "^1.21.2",

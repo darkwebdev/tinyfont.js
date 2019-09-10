@@ -8,19 +8,19 @@
             margin: 2em;
         }
         input {
-            display: block;
             margin-bottom: 2em;
             width: 4ch;
             min-width: 4ch;
             font-size: 22px;
-            font-family: sans-serif;
+            font-family: courier, sans-serif;
             white-space: pre;
         }
     </style>
     <script src="index.js" type="module"></script>
 </head>
 <body>
-    <input value="TINYFONT.JS" placeholder="Text" autofocus />
+    <input value="TINYFONT.JS" placeholder="Text" autofocus id="text" />
+    <input type="number" value="24" id="size" />
     <canvas id="canvas"></canvas>
 </body>
 </html>

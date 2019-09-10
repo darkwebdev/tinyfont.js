@@ -1,5 +1,5 @@
 # tinyfont.js
-Tiniest possible pixel font for your JS games < 1Kb (suitable for js13k)
+Tiniest possible pixel font for your JS games < 1Kb (suitable for js13k): [Demo](https://darkwebdev.github.io/tinyfont.js/examples)
 
 Inspired by https://github.com/PaulBGD/PixelFont
 
@@ -39,6 +39,20 @@ render('Complex stuff', 100, 100, 50, 'red');
 - y: vertical coordinate, px (default: 0)
 - size: font height, px (default: 24)
 - color: font color, string (default: '#000')
+
+## use different fonts:
+Builtin fonts:
+- `pixel` (default, based on [Pixel Font](https://github.com/PaulBGD/PixelFont))
+- `tiny` (Based on [game over Font](https://www.1001fonts.com/game-over-font.html))
+
+import from a browser:
+```ecmascript 6
+import { font } from 'node_modules/tinyfont/src/fonts/tiny.js';
+```
+import using a bundler:
+```ecmascript 6
+import { initFont, font } from 'tinyfont/font-tiny';
+```
 
 ## examples
 [Simple example](https://darkwebdev.github.io/tinyfont.js/examples/simple) ([source](examples/simple.js))
