@@ -3,6 +3,10 @@
     "toplevel": true
   },
   "compress": {
+    "passes": 2,
     "drop_console": true
+  },
+  "output": {
+    "ecma": 6
   }
 }
