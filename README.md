@@ -1,5 +1,5 @@
 # tinyfont.js
-Tiniest possible pixel font for your JS games (<700b gzipped, suitable for js13k): [Demo](https://darkwebdev.github.io/tinyfont.js/examples)
+Tiniest possible pixel font for your JS games (<700b zipped, suitable for js13k): [Demo](https://darkwebdev.github.io/tinyfont.js/examples)
 
 Inspired by https://github.com/PaulBGD/PixelFont
 
