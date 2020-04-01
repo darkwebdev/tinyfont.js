@@ -20,7 +20,7 @@ const update = () => {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     renderWithDefaultFont(textInput.value, 0, 0, sizeInput.value);
-    renderWithTinyFont(textInput.value, 0, 50, sizeInput.value);
+    renderWithTinyFont(textInput.value, 50, 50, sizeInput.value);
 };
 
 textInput.addEventListener('input', update);
