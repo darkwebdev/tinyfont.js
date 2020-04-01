@@ -32,7 +32,7 @@ export const initFont = ({ height=DEFAULT_CHAR_HEIGHT, ...chars }={}, ctx) => {
             binaryCols.map((column, colPos) =>
                 [...column].map((pixel, pixPos) => {
                     ctx.fillStyle = !+pixel ? 'transparent' : color; // pixel == 0 ?
-                    ctx.fillRect(marginX + colPos * pixelSize, y + pixPos * pixelSize, pixelSize, pixelSize);
+                    ctx.fillRect(x + marginX + colPos * pixelSize, y + pixPos * pixelSize, pixelSize, pixelSize);
                 })
             );
 
