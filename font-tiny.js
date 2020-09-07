@@ -1,1 +1,1 @@
-export * from './dist/tinyfont-tiny.min'
+export * from './dist/tinyfont-font-tiny.min'
