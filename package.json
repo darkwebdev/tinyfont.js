@@ -13,7 +13,7 @@
     "build": "yarn trans && yarn build:pixel && yarn build:tiny"
   },
   "devDependencies": {
-    "rollup": "^1.21.2",
+    "rollup": "^3.29.5",
     "terser": "^4.3.0"
   }
 }
