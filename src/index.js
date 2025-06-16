@@ -11,32 +11,39 @@ export const initFont = ({ height=DEFAULT_CHAR_HEIGHT, ...chars }={}, ctx) => {
         return
     }
 
-    const bin2arr = (bin, width) => bin.match(new RegExp(`.{${width}}`, 'g'));
-    const isNumber = code => code > 0;
+    return ( string, x = 0, y = 0, size = 24, color = DEFAULT_COLOR ) => {
+        const pixelSize = size / height;
+        const renderChar = ( charX, char ) => {
+            const fontCode = chars[ char.charCodeAt() ] || '';
+            let bin = Number.isInteger( fontCode ) ? fontCode : fontCode.codePointAt();
+            const binary = ( bin || 0 ).toString( 2 );
+            const width = Math.ceil( binary.length / height );
+            const mask = ( 1 << height ) - 1;
 
-    return (string, x=0, y=0, size=24, color=DEFAULT_COLOR) => {
-        const renderChar = (charX, char) => {
-            const pixelSize = size/height;
-            const fontCode = chars[char.charCodeAt()] || '';
-            const binaryChar = isNumber(fontCode) ? fontCode : fontCode.codePointAt();
+            ctx.fillStyle = color;
+            for ( let col = width; col > 0; col-- ) {
+                let rowPos = height - 1;
+                for ( let row = bin & mask; row > 0; row >>= 1 ) {
+                    if ( row & 1 ) {
+                        let y1 = y + rowPos * pixelSize, h = pixelSize;
 
-            const binary = (binaryChar || 0).toString(2);
+                        // This while loop greatly reduces the amount of draw calls.
+                        // If you need a few more bytes, you could remove this.
+                        while ( ( row >> 1 ) & 1 ) {
+                            y1 -= pixelSize;
+                            h += pixelSize;
+                            row >>= 1;
+                            rowPos--;
+                        }
 
-            const width = Math.ceil(binary.length / height);
-            const marginX = charX + pixelSize;
-            const formattedBinary = binary.padStart(width * height, 0);
-            const binaryCols = bin2arr(formattedBinary, height);
+                        ctx.fillRect( x + charX + col * pixelSize, y1, pixelSize, h );
+                    }
+                    rowPos--;
+                }
+                bin >>= height;
+            }
 
-            console.debug('Rendering char', char, char.charCodeAt(), fontCode, binaryChar, binaryCols);
-
-            binaryCols.map((column, colPos) =>
-                [...column].map((pixel, pixPos) => {
-                    ctx.fillStyle = !+pixel ? 'transparent' : color; // pixel == 0 ?
-                    ctx.fillRect(x + marginX + colPos * pixelSize, y + pixPos * pixelSize, pixelSize, pixelSize);
-                })
-            );
-
-            return charX + (width+1)*pixelSize
+            return charX + ( width + 1 ) * pixelSize;
         };
 
         console.debug('Rendering string', string);
